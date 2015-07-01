@@ -1,10 +1,9 @@
 #coding=utf-8
-__author__ = 'qwy'
+__author__ = 'rocky'
 import requests
 from bs4 import BeautifulSoup
 
-ORIGIN_DATA_FILE = 'data0.csv'
-URL_COL = 2
+ORIGIN_DATA_FILE = 'urls.txt'
 TIME_OUT = 1
 
 RESULT_FILE = 'result_' + ORIGIN_DATA_FILE
@@ -24,17 +23,15 @@ def crawl_urls_file():
     title_result = dict()
     result_data = list()
     try:
-        with open(ORIGIN_DATA_FILE, 'r') as origin_data_file:
-            origin_data = origin_data_file.readlines()
-            for data in origin_data:
-                clean_data = data.replace('\n', '')
-                url = clean_data.split(',')[URL_COL]
+        with open(ORIGIN_DATA_FILE, 'r') as url_file:
+            for url in url_file:
+                clean_data = url.replace('\n', '')
                 if title_result.get(url) is not None:
                     continue
                 title = do_crawl(url)
                 title = title.encode('utf-8').strip()
                 title_result[url] = title
-                result_data.append(clean_data + title)
+                result_data.append(clean_data + '||' + title)
                 result_data.append('\n')
                 print url, title_result.get(url)
 
