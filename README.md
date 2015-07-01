@@ -16,5 +16,3 @@ then return the new result file with **title data** added.
 Price spider added.
 Using selenium (or phantomjs) to crawl **price** element of the specified host (eg:jd.com, tmall.com),
 because the price element is load by js asynchronously in the page.
-
-
