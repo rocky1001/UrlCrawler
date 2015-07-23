@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool
 import jieba
-from jieba import analyse
 
 ORIGIN_DATA_FILE = 'urls_test_10.txt'
 TIME_OUT = 3
