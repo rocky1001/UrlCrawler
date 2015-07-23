@@ -121,9 +121,16 @@ if __name__ == '__main__':
     print 'Crawler begin...'
     test_url = 'http://news.163.com/13/0709/15/93BQE6UL00014JB6_all.html'
 
-    opt = webdriver.ChromeOptions()
-    opt.add_extension("Block-image_v1.1.crx")
-    DRIVER = webdriver.Chrome(CHROME_DRIVER_PATH, chrome_options=opt)
+    # 1.use block image tool
+    # chromeOptions = webdriver.ChromeOptions()
+    # chromeOptions.add_extension("Block-image_v1.1.crx")
+
+    # 2.use chrome options
+    chromeOptions = webdriver.ChromeOptions()
+    prefs = {"profile.managed_default_content_settings.images": 2}
+    chromeOptions.add_experimental_option("prefs", prefs)
+
+    DRIVER = webdriver.Chrome(CHROME_DRIVER_PATH, chrome_options=chromeOptions)
     # DRIVER.set_page_load_timeout(TIME_OUT)
     crawl_urls_file(test_url)
     DRIVER.close()
