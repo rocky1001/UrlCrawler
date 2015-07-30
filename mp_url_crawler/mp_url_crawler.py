@@ -6,7 +6,7 @@ from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool
 import jieba
 
-ORIGIN_DATA_FILE = 'urls_test_10.txt'
+ORIGIN_DATA_FILE = 'urls_10.txt'
 TIME_OUT = 3
 
 RESULT_FILE = 'result_' + ORIGIN_DATA_FILE
