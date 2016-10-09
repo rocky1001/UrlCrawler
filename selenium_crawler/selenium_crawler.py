@@ -9,15 +9,6 @@ ORIGIN_DATA_FILE = 'urls_3k.txt'
 TIME_OUT = 3
 
 RESULT_FILE = 'result_' + ORIGIN_DATA_FILE
-HEADERS = {
-    'Connection': 'keep-alive',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
-                  'Chrome/40.0.2214.93 Safari/537.36',
-    'DNT': '1',
-    'Accept-Encoding': 'gzip, deflate, sdch',
-    'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4,en-US;q=0.2',
-}
 
 
 def crawl_urls_file(_test_url=None):
